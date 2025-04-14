@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Star Token ($STAR)</title>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    // Phantom Wallet Connect
+    async function connectWallet() {
+      try {
+        const provider = window.phantom?.solana;
+        if (!provider?.isPhantom) {
+          alert("Phantom Wallet not found. Please install it.");
+          return;
+        }
+        const resp = await provider.connect();
+        document.getElementById("wallet-address").innerText = "Connected: " + resp.publicKey.toString();
+      } catch (err) {
+        console.error(err);
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <img src="logo.png" alt="Star Token Logo" class="logo"/>
+    <h1>Star Token ($STAR)</h1>
+    <p class="slogan">Real Finance. Real Utility. Real Future.</p>
+    <p><strong>Total Supply:</strong> 1,000,000,000 STAR</p>
+    <p><strong>Token Address:</strong> 7Hajt3Yc7MQhWwNsUAxdUgcLH7M59u1bDpZ79E5Zkmat</p>
+
+    <button onclick="connectWallet()" style="padding:10px 20px; margin: 15px; background:#6366f1; color:white; border:none; border-radius:6px;">Connect Phantom Wallet</button>
+    <p id="wallet-address" style="color: #22c55e;"></p>
+
+    <h2>Presale Participation</h2>
+    <h3>Public Presale (30%)</h3>
+    <p>Total: 700 SOL | Fee: 0.01 SOL | Min: 0.01 SOL | Max: 50 SOL</p>
+    <p>Wallet Address: <code>RwtrK6knmiYeTuJgNAo85jN7DUzVpFiJPBeyV4BFeqN</code></p>
+
+    <h3>Private Presale (20%)</h3>
+    <p>Total: 350 SOL | Fee: 0.01 SOL | Min: 1 SOL | Max: 150 SOL</p>
+    <p>Wallet Address: <code>8k2pViV4mKbeL5jv5QVwCr44VCtehnTzhDmtrRywjrFL</code></p>
+
+    <h2>Opal Store</h2>
+    <div class="products">
+      <div>
+        <img src="opal-small.jpg" alt="Small Opal"/>
+        <p><strong>Small Opal</strong><br>0.02 SOL or 10,000,000 STAR</p>
+      </div>
+      <div>
+        <img src="opal-large.jpg" alt="Large Opal"/>
+        <p><strong>Large Opal</strong><br>0.05 SOL or 25,000,000 STAR</p>
+      </div>
+    </div>
+    <p class="warning">* SOL is recommended until presale ends. STAR Token prices will normalize later.</p>
+    <p><strong>Payment Wallet:</strong> FNVruuziVqeYor5xNkx2ENsndjonqiWLEMjnXUs7JuXe</p>
+    <p><strong>Buyer Info Required:</strong> Full Name, Phone, Country, State, City, Address</p>
+
+    <footer>
+      <p>Follow us on <a href="https://x.com/StarToken15?t=0lTYkFOoR6fL7P91LxOr5Q&s=09" target="_blank">Twitter</a></p>
+    </footer>
+  </div>
+</body>
+</html>
